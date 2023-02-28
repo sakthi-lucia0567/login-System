@@ -20,6 +20,7 @@ initializePassport(
 
 app.set("view-engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/views"));
 app.use(flash());
 app.use(
   session({

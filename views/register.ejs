@@ -5,30 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <h1>Sign up</h1>
-    <div class="register">
-      <form action="/register" method="post">
-        <div>
-          <label for="name">Name</label>
-          <input type="name" id="name" name="name" />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" />
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" />
-        </div>
-        <div>
-          <button type="submit">Sign up</button>
-        </div>
-      </form>
-      <div class="anch">
-        <a href="/login">Sign in</a>
+    <div class="login-box">
+      <p>Signup</p>
+      <div class="errors">
+        <% if(messages.error) { %> <%= messages.error %> <% } %>
       </div>
+      <form
+        action="/register"
+        id="signup-form"
+        method="post"
+        autocomplete="off"
+      >
+        <div class="user-box">
+          <input id="name" name="name" type="name" required="required" />
+          <label for="name">Name</label>
+        </div>
+        <div class="user-box">
+          <input id="email" name="email" type="email" required="required" />
+          <label for="email">Email</label>
+        </div>
+        <div class="user-box">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required="required"
+          />
+          <label>Password</label>
+        </div>
+        <a onclick="document.getElementById('signup-form').submit()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </form>
+      <p>Don't have an account? <a href="/login" class="a2">Login...</a></p>
     </div>
   </body>
 </html>
